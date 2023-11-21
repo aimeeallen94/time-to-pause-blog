@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-aimeeallen9-timetopause-naikw0svupt.ws-eu106.gitpod.io', 'time-to-pause-blog.herokuapp.com', 
-'localhost']
+'localhost', 'time-to-pause-blog-20eb916da5ca.herokuapp.com']
 
 
 # Application definition
