@@ -21,4 +21,10 @@ In Gitpod I opened my settings.py file and using code imported os and dj databas
 I saved all files and in the termnial I made migrations using the code python3 manage.py migrate.
 I have an account set up with Cloudinary also. This site is used to host images and media from the app to ensure they are always available. I logged into my Cloudinary account and from the dashboard I copied the API Environment Variable. 
 I added this to my env.py file as a separate line of code to point directly to my Cloudinary URL.
-I once again returned to my app created on Heroku and clicked on the Settings tab and revealed config vars. From here I added a key of CLOUDINARY_URL and the value of the API Environment Variable I copied from Cloudinary and I added this.
+I once again returned to my app created on Heroku and clicked on the Settings tab and revealed config vars. From here I added a key of CLOUDINARY_URL and the value of the API Environment Variable I copied from Cloudinary and I added this. Here I also added another Config Var with a key of DISABLE_COLLECTSTATIC with a value of 1. This was only added tempoarily and will be removed before deployment.
+Back in Gitpod in the settings.py file I added cloudinary and cloudinary_storage to INSTALLED_APPS. Here I also instructed Django to use Cloudinary to store media and static files. I also linked my file to the templates directory in Heroku using os.path.join. I also changed the TEMPLATES value to TEMPLATES_DIR in order to link them.
+I added my Heroku app name to the ALLOWED_HOSTS in the settings.py file also in the correct format. 
+In Gitpod I next created 3 folders in the top level directory of media, templates and static.
+Here I also created a file called Procfile. I added the following code to the Procfile web: gunicorn (timetopause).wsgi.
+I saved all my files. In the terminal I added my files to GitHub using git add ., git commit -m 'Deployment commit' and git push.
+From here I returned to my project in Heroku, I selected the Deploy tab, in the 'Deployment Method' I selected GitHub. In the textbox that appeared I entered my apps name as it appeared on GitHub confirmed it was the correct project. I scrolled down to the 'Manual Deploy' option and selected 'Deploy Branch'. I wacthed my build logs from here and selected to open the app once it was complete. 
